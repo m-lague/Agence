@@ -2,20 +2,26 @@
 header.masthead {
   text-align: center;
   color: rgb(50, 50, 50);
-  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 1)); //, url("#{$header-image}");
+   //, url("#{$header-image}");
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center;
   background-size: cover;
   width: 100%;
 
+  .background {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 1));
+    position: relative;
+    height: 100vh;
+  }
+
   .image-gauche, .image-droite {
     position: absolute;
     bottom: 0;
-    width: 150px; /* Ajuste la largeur selon tes besoins */
+    width: 200px; /* Ajuste la largeur selon tes besoins */
     height: auto;
-    z-index: 0;
-    transition: width 0.3s ease;
+    z-index: -1;
+    transition: width 1s ease;
   }
   .image-gauche {
     left: 0;
@@ -43,6 +49,8 @@ header.masthead {
       line-height: 50px;
       margin-bottom: 25px;
       @include heading-font;
+      z-index: 1;
+      position: relative;
     }
   }
 }
@@ -64,6 +72,8 @@ header.masthead {
         line-height: 75px;
         margin-bottom: 50px;
         @include heading-font;
+        z-index: 1;
+        position: relative;
       }
     }
       .image-gauche,
